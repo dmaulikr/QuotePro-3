@@ -122,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="1271" y="48"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Quotes-->
         <scene sceneID="gJB-Ax-rkR">
             <objects>
                 <tableViewController id="ysc-Xg-tgh" customClass="TableViewController" customModule="QuotePro" customModuleProvider="target" sceneMemberID="viewController">
@@ -174,7 +174,7 @@
                             <outlet property="delegate" destination="ysc-Xg-tgh" id="gUm-jM-746"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4Y6-Vn-dx1">
+                    <navigationItem key="navigationItem" title="Quotes" id="4Y6-Vn-dx1">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="25k-nf-Aj2">
                             <connections>
                                 <segue destination="k0j-rC-VOQ" kind="push" identifier="AddItem" id="Fue-nd-TRQ"/>
@@ -233,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-662" y="359"/>
+            <point key="canvasLocation" x="-72" y="359"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ndV-gk-kaC">

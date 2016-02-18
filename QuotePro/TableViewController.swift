@@ -8,10 +8,7 @@
 
 import UIKit
 
-
 class TableViewController: UITableViewController, NSURLConnectionDelegate, NewQuoteAddition {
-    
-    
     
     var quoteAndImageArray = [QuoteAndImage]()
     
@@ -23,7 +20,6 @@ class TableViewController: UITableViewController, NSURLConnectionDelegate, NewQu
         super.viewDidLoad()
         
         dataDownload()
-
         self.tableView.reloadData()
         
         // Uncomment the following line to preserve selection between presentations
@@ -34,7 +30,6 @@ class TableViewController: UITableViewController, NSURLConnectionDelegate, NewQu
     }
     
     func dataDownload() {
-        
         let session = NSURLSession.sharedSession()
         let url = NSURL(string: "https://unsplash.it/200/300/?random")
         let urlRequest = NSURLRequest(URL: url!)
@@ -58,13 +53,10 @@ class TableViewController: UITableViewController, NSURLConnectionDelegate, NewQu
         let datatask = session.dataTaskWithRequest(urlRequest) { (data, response, error) -> Void in
             do {
                 if let dict = try NSJSONSerialization.JSONObjectWithData(data! , options: []) as? NSDictionary {
-                    
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        
                         self.quoteString = (dict["quoteText"] as? String)!
                         self.quoteAuthor = (dict["quoteAuthor"] as? String)!
                         self.saveOneQuoteToArray()
-
                     })
                     print(dict)
                 } else {
@@ -82,9 +74,7 @@ class TableViewController: UITableViewController, NSURLConnectionDelegate, NewQu
         let oneItem = QuoteAndImage(quote: self.quoteString, image: self.quoteImage, author: self.quoteAuthor)
         self.quoteAndImageArray.append(oneItem)
         self.tableView.reloadData()
-
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -103,7 +93,6 @@ class TableViewController: UITableViewController, NSURLConnectionDelegate, NewQu
         return quoteAndImageArray.count
     }
 
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TableCell", forIndexPath: indexPath) as? TableViewCell
         let quote = quoteAndImageArray[indexPath.row]

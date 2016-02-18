@@ -156,23 +156,14 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
         dataDownload()
     }
     
-    
     @IBAction func newQuoteButtonPressed(sender: UIButton) {
         quoteDownload()
     }
     
-    
     @IBAction func saveButtonPressed(sender: UIButton) {
-        
-        
         let oneItem = QuoteAndImage(quote: self.quoteString, image: self.quoteImage, author: self.quoteAuthor)
         self.delegate?.saveNewQuoteImage(oneItem)
-       // self.quoteAndImageArray.append(oneItem)
-        
         self.navigationController?.popViewControllerAnimated(true)
-        
     }
-    
-
 }
 
