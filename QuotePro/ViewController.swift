@@ -8,35 +8,65 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController, NSURLConnectionDelegate {
+    
+    
+    @IBOutlet weak var quotePickView: UIView!
+    
+    struct quoteImageElement {
+        let quote: String
+        let image: UIImage
+        let author: String
+    }
+    
+    var quoteAndImageArray = [quoteImageElement]()
     
     var data = NSMutableData()
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var quoteLabel: UILabel!
     
+    var quoteViewDetails = QuoteView()
+    var quoteString = String()
+    var quoteAuthor = String()
+    var quoteImage = UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.orangeColor()
+        
+       
+        
+        if let objects = NSBundle.mainBundle().loadNibNamed("QuoteView", owner: nil, options: nil),
+            let quoteView = objects.first as? QuoteView {
+                self.quoteViewDetails = quoteView
+                self.quotePickView.addSubview(quoteView)
+                
+                quoteView.frame.size.width = self.quotePickView.frame.size.width
+                quoteView.frame.size.height = self.quotePickView.frame.size.height
+        }
+        
         dataDownload()
         quoteDownload()
-        // Do any additional setup after loading the view, typically from a nib.
+     //   loadDataForQuoteView()
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+      
         dataDownload()
         quoteDownload()
+   //     loadDataForQuoteView()
     }
 
     func startConnection() {
 //      NSURLSession *session = [NSURLSession sharedSession];
         let session = NSURLSession.sharedSession()
-        
 //      NSString *urlString = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=c9zzxwtuc3q2tftqata3k59w";
         let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=c9zzxwtuc3q2tftqata3k59w")
-
 //      NSURL *url = [NSURL URLWithString:urlString];
 //      NSURLRequest *urlRequest = NSURLRequest requestWithURL:url
         let urlRequest = NSURLRequest(URL: url!)
@@ -51,17 +81,23 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
         datatask.resume()
     }
     
+//    func loadDataForQuoteView() {
+//        self.quoteViewDetails.setupWithQuote(quoteString, image: quoteImage)
+//    }
+    
     func dataDownload() {
-
+        
         let session = NSURLSession.sharedSession()
         let url = NSURL(string: "https://unsplash.it/200/300/?random")
         let urlRequest = NSURLRequest(URL: url!)
+        
         let datatask = session.dataTaskWithRequest(urlRequest) { (data, response, error) -> Void in
             let image = UIImage(data: data!)
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.imageView.image = image
+                self.quoteViewDetails.setupWithImage(image!)
+                self.quoteImage = image!
+               // self.imageView.image = image
             })
-            
             print(image)
         }
         datatask.resume()
@@ -73,11 +109,16 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
         let urlRequest = NSURLRequest(URL: url!)
         
         let datatask = session.dataTaskWithRequest(urlRequest) { (data, response, error) -> Void in
-
             do {
-                if let dict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
+                if let dict = try NSJSONSerialization.JSONObjectWithData(data! , options: []) as? NSDictionary {
+                    
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.quoteLabel.text = dict["quoteText"] as? String
+                        self.quoteViewDetails.setupWithQuote((dict["quoteText"] as? String)!, author: (dict["quoteAuthor"] as? String)!)
+                        
+                        self.quoteString = (dict["quoteText"] as? String)!
+                        self.quoteAuthor = (dict["quoteAuthor"] as? String)!
+                        
+                      //  self.quoteLabel.text = dict["quoteText"] as? String
                     })
                     print(dict)
                 } else {
@@ -90,7 +131,6 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
         }
         datatask.resume()
     }
-
     
     
     func connection(connection: NSURLConnection!, didReceiveData data: NSData!){
@@ -110,21 +150,25 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
         // Dispose of any resources that can be recreated.
     }
 
     @IBAction func newImageButtonPressed(sender: UIButton) {
         dataDownload()
-        
     }
     
     
     @IBAction func newQuoteButtonPressed(sender: UIButton) {
-        
         quoteDownload()
     }
     
+    
+    @IBAction func saveButtonPressed(sender: UIButton) {
+        
+        let oneItem = quoteImageElement(quote: self.quoteString, image: self.quoteImage, author: self.quoteAuthor)
+        self.quoteAndImageArray.append(oneItem)
+        
+    }
     
 
 }

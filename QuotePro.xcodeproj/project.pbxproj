@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48D035ED1C7502FE005A5748 /* QuoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D035EC1C7502FE005A5748 /* QuoteView.xib */; };
+		48D035EF1C750318005A5748 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D035EE1C750318005A5748 /* QuoteView.swift */; };
+		48D035F11C7530E5005A5748 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D035F01C7530E5005A5748 /* TableViewController.swift */; };
+		48D035F31C75317E005A5748 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D035F21C75317E005A5748 /* TableViewCell.swift */; };
+		48D035F71C753D22005A5748 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D035F61C753D22005A5748 /* DetailViewController.swift */; };
 		48E488811C74DDE7000D0A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E488801C74DDE7000D0A02 /* AppDelegate.swift */; };
 		48E488831C74DDE7000D0A02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E488821C74DDE7000D0A02 /* ViewController.swift */; };
 		48E488861C74DDE7000D0A02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E488841C74DDE7000D0A02 /* Main.storyboard */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48D035EC1C7502FE005A5748 /* QuoteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuoteView.xib; sourceTree = "<group>"; };
+		48D035EE1C750318005A5748 /* QuoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		48D035F01C7530E5005A5748 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		48D035F21C75317E005A5748 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		48D035F61C753D22005A5748 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
 		48E4887D1C74DDE7000D0A02 /* QuotePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E488801C74DDE7000D0A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E488821C74DDE7000D0A02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +68,11 @@
 			children = (
 				48E488801C74DDE7000D0A02 /* AppDelegate.swift */,
 				48E488821C74DDE7000D0A02 /* ViewController.swift */,
+				48D035F61C753D22005A5748 /* DetailViewController.swift */,
+				48D035F01C7530E5005A5748 /* TableViewController.swift */,
+				48D035F21C75317E005A5748 /* TableViewCell.swift */,
+				48D035EC1C7502FE005A5748 /* QuoteView.xib */,
+				48D035EE1C750318005A5748 /* QuoteView.swift */,
 				48E488841C74DDE7000D0A02 /* Main.storyboard */,
 				48E4888A1C74DDE7000D0A02 /* Assets.xcassets */,
 				48E4888C1C74DDE7000D0A02 /* LaunchScreen.storyboard */,
@@ -128,6 +143,7 @@
 				48E4888E1C74DDE7000D0A02 /* LaunchScreen.storyboard in Resources */,
 				48E4888B1C74DDE7000D0A02 /* Assets.xcassets in Resources */,
 				48E488861C74DDE7000D0A02 /* Main.storyboard in Resources */,
+				48D035ED1C7502FE005A5748 /* QuoteView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +157,10 @@
 				48E488831C74DDE7000D0A02 /* ViewController.swift in Sources */,
 				48E488811C74DDE7000D0A02 /* AppDelegate.swift in Sources */,
 				48E488891C74DDE7000D0A02 /* QuotePro.xcdatamodeld in Sources */,
+				48D035F31C75317E005A5748 /* TableViewCell.swift in Sources */,
+				48D035F11C7530E5005A5748 /* TableViewController.swift in Sources */,
+				48D035EF1C750318005A5748 /* QuoteView.swift in Sources */,
+				48D035F71C753D22005A5748 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +308,7 @@
 				48E488941C74DDE7000D0A02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
