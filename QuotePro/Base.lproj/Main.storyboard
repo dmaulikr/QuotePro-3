@@ -22,41 +22,50 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="375"/>
                                 <color key="backgroundColor" red="0.35099154710769653" green="0.64202225208282471" blue="0.90795093774795532" alpha="0.27009698275862071" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3Y-Wh-qHw">
-                                <rect key="frame" x="47" y="464" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3Y-Wh-qHw">
+                                <rect key="frame" x="46" y="464" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.90812867879867554" green="0.62530869245529175" blue="0.38360649347305298" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8VM-78-tsg"/>
                                     <constraint firstAttribute="width" constant="100" id="eBs-up-a9U"/>
                                 </constraints>
-                                <state key="normal" title="New Image"/>
+                                <state key="normal" title="New Image">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="newImageButtonPressed:" destination="k0j-rC-VOQ" eventType="touchUpInside" id="kYP-qM-JRb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KS1-9R-9ge">
-                                <rect key="frame" x="110" y="518" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KS1-9R-9ge">
+                                <rect key="frame" x="110" y="514" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.9107326865196228" green="0.9114987850189209" blue="0.45310986042022705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LiA-N5-zVL"/>
                                     <constraint firstAttribute="width" constant="100" id="ggZ-Ke-Jka"/>
                                 </constraints>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.09484737366437912" green="0.62159568071365356" blue="0.12312639504671097" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="k0j-rC-VOQ" eventType="touchUpInside" id="8nd-cs-LPb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2g8-ru-Bxz">
                                 <rect key="frame" x="174" y="464" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.90812867879867554" green="0.62530869245529175" blue="0.38360649347305298" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="CAO-14-sZm"/>
                                     <constraint firstAttribute="height" constant="30" id="y4k-7S-ffK"/>
                                 </constraints>
-                                <state key="normal" title="New Quote"/>
+                                <state key="normal" title="New Quote">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="newQuoteButtonPressed:" destination="k0j-rC-VOQ" eventType="touchUpInside" id="yi4-h1-t0r"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.088047437369823456" green="0.71914595365524292" blue="0.70900791883468628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2g8-ru-Bxz" firstAttribute="top" secondItem="TUu-0R-0yw" secondAttribute="bottom" constant="25" id="0J8-Ew-9Wm"/>
                             <constraint firstItem="qQN-wi-ucG" firstAttribute="top" secondItem="TUu-0R-0yw" secondAttribute="bottom" constant="129" id="27l-PI-xa7"/>

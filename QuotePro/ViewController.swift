@@ -9,19 +9,21 @@
 import UIKit
 
 
+protocol NewQuoteAddition {
+    
+    func saveNewQuoteImage(quoteImageElement: QuoteAndImage)
+}
+
+
 
 class ViewController: UIViewController, NSURLConnectionDelegate {
     
     
+    var delegate: NewQuoteAddition? = nil
+    
     @IBOutlet weak var quotePickView: UIView!
     
-    struct quoteImageElement {
-        let quote: String
-        let image: UIImage
-        let author: String
-    }
-    
-    var quoteAndImageArray = [quoteImageElement]()
+//    var quoteAndImageArray = [QuoteAndImage]()
     
     var data = NSMutableData()
     
@@ -35,9 +37,6 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.orangeColor()
-        
-       
         
         if let objects = NSBundle.mainBundle().loadNibNamed("QuoteView", owner: nil, options: nil),
             let quoteView = objects.first as? QuoteView {
@@ -165,8 +164,12 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
     
     @IBAction func saveButtonPressed(sender: UIButton) {
         
-        let oneItem = quoteImageElement(quote: self.quoteString, image: self.quoteImage, author: self.quoteAuthor)
-        self.quoteAndImageArray.append(oneItem)
+        
+        let oneItem = QuoteAndImage(quote: self.quoteString, image: self.quoteImage, author: self.quoteAuthor)
+        self.delegate?.saveNewQuoteImage(oneItem)
+       // self.quoteAndImageArray.append(oneItem)
+        
+        self.navigationController?.popViewControllerAnimated(true)
         
     }
     

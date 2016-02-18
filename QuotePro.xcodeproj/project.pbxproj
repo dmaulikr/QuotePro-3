@@ -12,6 +12,7 @@
 		48D035F11C7530E5005A5748 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D035F01C7530E5005A5748 /* TableViewController.swift */; };
 		48D035F31C75317E005A5748 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D035F21C75317E005A5748 /* TableViewCell.swift */; };
 		48D035F71C753D22005A5748 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D035F61C753D22005A5748 /* DetailViewController.swift */; };
+		48D035F91C754E66005A5748 /* QuoteAndImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D035F81C754E66005A5748 /* QuoteAndImage.swift */; };
 		48E488811C74DDE7000D0A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E488801C74DDE7000D0A02 /* AppDelegate.swift */; };
 		48E488831C74DDE7000D0A02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E488821C74DDE7000D0A02 /* ViewController.swift */; };
 		48E488861C74DDE7000D0A02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E488841C74DDE7000D0A02 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		48D035F01C7530E5005A5748 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		48D035F21C75317E005A5748 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		48D035F61C753D22005A5748 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
+		48D035F81C754E66005A5748 /* QuoteAndImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteAndImage.swift; sourceTree = "<group>"; };
 		48E4887D1C74DDE7000D0A02 /* QuotePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E488801C74DDE7000D0A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E488821C74DDE7000D0A02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				48E488801C74DDE7000D0A02 /* AppDelegate.swift */,
 				48E488821C74DDE7000D0A02 /* ViewController.swift */,
+				48D035F81C754E66005A5748 /* QuoteAndImage.swift */,
 				48D035F61C753D22005A5748 /* DetailViewController.swift */,
 				48D035F01C7530E5005A5748 /* TableViewController.swift */,
 				48D035F21C75317E005A5748 /* TableViewCell.swift */,
@@ -156,6 +159,7 @@
 			files = (
 				48E488831C74DDE7000D0A02 /* ViewController.swift in Sources */,
 				48E488811C74DDE7000D0A02 /* AppDelegate.swift in Sources */,
+				48D035F91C754E66005A5748 /* QuoteAndImage.swift in Sources */,
 				48E488891C74DDE7000D0A02 /* QuotePro.xcdatamodeld in Sources */,
 				48D035F31C75317E005A5748 /* TableViewCell.swift in Sources */,
 				48D035F11C7530E5005A5748 /* TableViewController.swift in Sources */,

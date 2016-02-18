@@ -8,15 +8,12 @@
 
 import UIKit
 
-class TableViewController: UITableViewController, NSURLConnectionDelegate {
+
+class TableViewController: UITableViewController, NSURLConnectionDelegate, NewQuoteAddition {
     
-    struct quoteImageElement {
-        let quote: String
-        let image: UIImage
-        let author: String
-    }
     
-    var quoteAndImageArray = [quoteImageElement]()
+    
+    var quoteAndImageArray = [QuoteAndImage]()
     
     var quoteString = String()
     var quoteAuthor = String()
@@ -82,7 +79,7 @@ class TableViewController: UITableViewController, NSURLConnectionDelegate {
     }
     
     func saveOneQuoteToArray() {
-        let oneItem = quoteImageElement(quote: self.quoteString, image: self.quoteImage, author: self.quoteAuthor)
+        let oneItem = QuoteAndImage(quote: self.quoteString, image: self.quoteImage, author: self.quoteAuthor)
         self.quoteAndImageArray.append(oneItem)
         self.tableView.reloadData()
 
@@ -134,8 +131,18 @@ class TableViewController: UITableViewController, NSURLConnectionDelegate {
             }
         else if segue.identifier == "AddItem" {
     
+            let newQuoteViewController = segue.destinationViewController as! ViewController
+            newQuoteViewController.delegate = self
+            
             print("Adding new quote.")
         }
+    }
+    
+    func saveNewQuoteImage(quoteImageElement: QuoteAndImage) {
+
+        self.quoteAndImageArray.append(quoteImageElement)
+        self.tableView.reloadData()
+    
     }
 
     /*
